@@ -22,8 +22,4 @@ RUN chmod +x /docker-entrypoint.sh
 RUN usermod --uid 1000 www-data
 RUN groupmod --gid 1000 www-data
 
-COPY --link ./ /srv/app/
-
-RUN composer install
-
 CMD ["/bin/bash", "-c", "/docker-entrypoint.sh"]
