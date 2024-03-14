@@ -7,12 +7,12 @@ Recommended software: Docker Desktop, PhpStorm (used for code editing, but also 
 ## 1. Starting the containers
 
 To launch, install Docker Desktop, and using a CLI (PowerShell is recommended, or PhpStorm's Terminal), enter the
-command `docker-compose up -d` in the directory this project exists i.e.
+command `docker compose up -d` in the directory this project exists i.e.
 `C:/Users/YOUR_NAME/Downloads/symfony-docker-nginx`.
 
 ## 2. Accessing the PHP container CLI
 
-From the CLI, in the same directory you entered the `docker-compose up -d` command,
+From the CLI, in the same directory you entered the `docker compose up -d` command,
 enter `docker ps` to get the container IDs, which will be random, and look for the ID of the symfony-docker-nginx-php
 image (i.e. ID 1eb9a5a63542). Then, enter `docker exec -it CONTAINER_ID bash`, i.e. `docker exec -it 1eb9a5a63542 bash`.
 The command you now enter will be executed on the container itself, so in Linux.
@@ -39,9 +39,9 @@ After creating a controller, for instance HomeController, go to http://localhost
 
 ## 5. Speeding up response times on Windows
 
-On Windows, Symfony projects that use Docker are slow because of the var and vendor folders. The docker-compose file
+On Windows, Symfony projects that use Docker are slow because of the var and vendor folders. The compose.yml file
 excludes these folders from being synced with the container. It is recommended to un-comment these lines after running
-docker-compose for the first time, for improved performance (in `compose.yml`). Example
+docker compose for the first time, for improved performance (in `compose.yml`). Example
 difference in performance for a response: **120ms** with the lines un-commented vs **1750ms** with the lines commented.
 
 ## 6. Creating a database
